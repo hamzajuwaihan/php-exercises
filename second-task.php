@@ -88,7 +88,7 @@ function checkPalindrome($str)
     return "this string is palindrome";
 }
 //eva can i see bees in a cave
-echo checkPalindrome("Eva, can i see bees in a cave") . "<br>";
+echo checkPalindrome("Eva, can i see bees in a cave") ;
 
 // remove duplicates 
 function removeDuplicate($arr)
@@ -133,14 +133,20 @@ year_check($my_year);
 
 //season summer or winter
 $tempreture = 27;
+function seasonTempreture($tempreture){
+
 if ($tempreture < 20) {
     echo "its winter <br>";
 } else {
     echo "its summertime <br>";
 }
+}
+seasonTempreture($tempreture);
 
 // sum of two integers 
-$arr = ["firstIneger" => 2, "secondInteger" => 2];
+$arr= ["firstIneger" => 2, "secondInteger" => 2];
+function sumOfTwo( $arr){
+    
 if ($arr["firstIneger"] == $arr["secondInteger"]) {
     echo ($arr["firstIneger"] * $arr["secondInteger"]) * 3 . "<br>";
 } else {
@@ -153,7 +159,8 @@ if ($arr["firstIneger"] + $arr["secondInteger"] == 30) {
 } else {
     echo ("false") . "<br>";
 }
-
+}
+sumOfTwo( $arr);
 // multiple of 3 
 
 function multipleOfThree($num)
