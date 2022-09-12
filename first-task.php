@@ -45,29 +45,26 @@ for ($i = 0; $i < strlen($first); $i++) {
         break;
     }
 }
-// 10
 $sample = "Twinkle, twinkle, little star.";
 $data = explode(",", $sample);
 var_dump($data);
-// 11
+
 $ch = 'z';
 $next_ch = ++$ch;
 if (strlen($next_ch) > 1) { // if you go beyond z or Z reset to a or A
     $next_ch = $next_ch[0];
 }
 echo "<br>" . $next_ch."<br>";
-// 12
 $string = 'The brown fox';
 $replacement = 'quick ';
 echo substr_replace($string, $replacement, 4, 0)."</br>";
 echo strtok($string, " ")."<br>";
-// 13
 $str = "00775505";
 echo  ltrim($str, "0")."<br>";
-// 14
+
 $str = "The quick brown fox jumps over the lazy dog";
 echo str_replace("fox","",$str)."<br>";
-// 15
+
 $str = "The quick brown fox jumps over the lazy ---";
 echo  rtrim($str, "-")."<br>";
 
