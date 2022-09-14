@@ -78,7 +78,6 @@ function checkPalindrome($str)
 {
 
     $trimmedString = strtolower(str_replace(array('/', "'", ':', ';', '<', '-', '+', "*", '\\', "\"", " ", ","), '', $str));
-    echo $trimmedString . "<br>";
     $mid = strlen($trimmedString);
     for ($i = 0; $i < $mid; $i++) {
         if (substr($trimmedString, strlen($trimmedString) - $i - 1, 1) != substr($trimmedString, $i, 1)) {
@@ -109,7 +108,7 @@ function removeDuplicate($arr)
     }
 }
 
-$array = [12, 5, 8, 9, 4, 7, 5];
+$array = [12, 5, 8, 9, 4, 7];
 // foreach ($array as $value) {
 //     echo $value . ' ';
 // }

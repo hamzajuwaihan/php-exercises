@@ -1,45 +1,53 @@
+
 <?php
-//declare(strict_types=1);
-// PHP Built-in Functions
-// PHP has over 1000 built-in functions that can be called directly, from within a script, to perform a specific task.
-
-
-
-
-
-function addNumbers(int $a, int $b)
-{
-    return $a + $b;
-}
-echo addNumbers(5, "5") . "<br>";
-// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
-
-
-
 /*
- // strict requirement
+Note:
 
-function addNumbers(int $a, int $b) {
-  return $a + $b;
-}
-echo addNumbers(5, "5 days");
-// since strict is enabled and "5 days" is not an integer, an error will be thrown
+A short array syntax exists which replaces array() with [].
 */
+$array = array(
+    "foo" => "bar",
+    "bar" => "foo",
+);
 
-
-//PHP Return Type Declarations
-function addNumbersFloat(float $a, float $b): float
-{
-    return $a + $b;
+// Using the short array syntax
+$array = [
+    "foo" => "bar",
+    "bar" => "foo",
+];
+$array = array(
+    "a",
+    "b",
+    6 => "c",
+    "d",
+);
+/*
+array(4) {
+  [0]=>
+  string(1) "a"
+  [1]=>
+  string(1) "b"
+  [6]=>
+  string(1) "c"
+  [7]=>
+  string(1) "d"
 }
-echo addNumbersFloat(1.2, 5.2) . "<br>";
 
-//Passing Arguments by Reference
-function add_five(&$value)
-{
-    $value += 5;
-}
+*/
+$array = array(
+    "foo" => "bar",
+    42    => 24,
+    "multi" => array(
+         "dimensional" => array(
+             "array" => "foo"
+         )
+    )
+);
+/*
+var_dump($array["foo"]);
+var_dump($array[42]);
+var_dump($array["multi"]["dimensional"]["array"]);
+?>
 
-$num = 2;
-add_five($num);
-echo $num;
+*/
+?>
