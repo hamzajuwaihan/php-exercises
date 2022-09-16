@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+$starttime = microtime(true); 
 $tasks = $_SESSION['task'];
 if (isset($_POST['submit']) && $_POST['task']!=="") {
     array_push($tasks,$_POST['task']);
@@ -8,6 +9,10 @@ if (isset($_POST['submit']) && $_POST['task']!=="") {
 
 
 }
+if (empty($_SESSION['counter']))
+	$_SESSION['counter'] = 1;
+else
+	$_SESSION['counter']++;
 ?>
 <form action="" method="post">
 <label for="tasks">Add to do:</label>
@@ -25,6 +30,12 @@ foreach ($tasks as $key => $value) {
     echo ("<li name='{$key}'> {$value} <button value='$key' type='submit' name='delete'>Delete</button></li>");
 }
 echo "</ul></form>";
+echo "name of script: ". basename($_SERVER['PHP_SELF']) . " name of project: ".basename(dirname(__FILE__));
+echo "<br>";
+echo $_SESSION['counter']."times."; 
+echo "<br>";
+$endtime = microtime(true);
 
+printf("Page loaded in %f seconds", $endtime - $starttime );
 
 ?>
