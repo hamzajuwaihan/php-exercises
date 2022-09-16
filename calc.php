@@ -25,9 +25,8 @@
 </form>
 
 <?php 
-$fnum = $_GET["fnum"];
-$snum = $_GET["snum"];
-if ($fnum == "" || $snum=="") {
+
+if (isset($_GET["fnum"]) && $_GET["fnum"] == "" ||isset( $_GET["snum"]) &&  $_GET["snum"]=="") {
     echo "<h6>check your inputs!</h6>";
 }
 elseif (isset($_GET["plus"]) ) {
