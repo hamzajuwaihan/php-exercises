@@ -2,6 +2,7 @@
 <?php
 session_start();
 $starttime = microtime(true); 
+setcookie('todo', 'task 4,5,6,7,8,9');
 $tasks = $_SESSION['task'];
 if (isset($_POST['submit']) && $_POST['task']!=="") {
     array_push($tasks,$_POST['task']);
@@ -14,11 +15,13 @@ if (empty($_SESSION['counter']))
 else
 	$_SESSION['counter']++;
 ?>
+<html>
 <form action="" method="post">
 <label for="tasks">Add to do:</label>
 <input type="text" name="task" id="tasks"  >
 <button type="submit" value="submit" name="submit">Add</button>
 </form>
+</html>
 <?php 
 
 if (isset($_POST['delete'])) {
@@ -34,6 +37,8 @@ echo "name of script: ". basename($_SERVER['PHP_SELF']) . " name of project: ".b
 echo "<br>";
 echo $_SESSION['counter']."times."; 
 echo "<br>";
+echo "cookie value: ". $_COOKIE['todo']."<br>";
+
 $endtime = microtime(true);
 
 printf("Page loaded in %f seconds", $endtime - $starttime );
